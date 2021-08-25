@@ -1,5 +1,6 @@
 import Cookie from "universal-cookie";
 import Layout from "../components/Layout";
+import Link from "next/link";
 import { useRouter, NextRouter } from "next/router";
 
 const cookie = new Cookie();
@@ -14,6 +15,19 @@ export default function MainPage() {
 
   return (
     <Layout title="Main Page">
+      <div className="mb-10">
+        <Link href="/blog-page" passHref>
+          <a className="bg-indigo-500 ml-8 hover:bg-indigo-600 text-white px-4 py-12 rounded">
+            Visit Blog by SSG + ISR
+          </a>
+        </Link>
+        <Link href="/task-page" passHref>
+          <a className="bg-gray-500 ml-8 hover:bg-gray-600 text-white px-4 py-12 rounded">
+            Visit Task by ISR + CSR
+          </a>
+        </Link>
+      </div>
+
       <svg
         onClick={logout}
         className="mt-10 cursor-pointer w-6 h-6"
